@@ -15,6 +15,11 @@ const values = [
 
 const flexContainer = document.querySelector('#flex-container');
 
+const totalValue = document.querySelector('#valor-total');
+
+let total = 0;
+
+
 values.forEach(valorAtual => {
 
     const moneyColumn = document.createElement('div');
@@ -33,6 +38,7 @@ values.forEach(valorAtual => {
     input.setAttribute('type', 'number');
     input.setAttribute('min', '0');
     input.setAttribute('max', '10000');
+    input.addEventListener('input', updateValue);
 
     const valorTotalH3 = document.createElement('h3');
     valorTotalH3.innerHTML = 'Valor Total:';
@@ -48,6 +54,12 @@ values.forEach(valorAtual => {
     moneyColumn.appendChild(valorMonetario);
 
     flexContainer.appendChild(moneyColumn);
+
+      
+    function updateValue(e) {
+        var total = e.target.value * valorAtual[0];        
+        valorMonetario.innerHTML = 'R$' + total.toFixed(2).toString().replace('.', ',');
+    }
     
 });
 
