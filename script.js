@@ -46,7 +46,10 @@ values.forEach(valorAtual => {
     valorMonetario.classList.add('valor-monetario');
     valorMonetario.innerHTML = 'R$ 0,00';
 
+    const hr = document.createElement('hr');
+
     moneyColumn.appendChild(moneyValueH2);
+    moneyColumn.appendChild(hr);
     moneyColumn.appendChild(label);
     moneyColumn.appendChild(input);
     moneyColumn.appendChild(valorTotalH3);
