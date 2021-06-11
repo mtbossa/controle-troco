@@ -1,5 +1,5 @@
 const values = [
-    [0.05, '0,05', 'cincoCentavos', 0.0], 
+    [0.05, '0,05', 'cincoCentavos', 0.0],
     [0.10, '0,10', 'dezCentavos', 0.0],
     [0.25, '0,25', 'vinceCincoCentavos', 0.0],
     [0.50, '0,50', 'cinquentaCentavos', 0.0],
@@ -36,14 +36,14 @@ values.forEach(valorAtual => {
     input.setAttribute('id', `${valorAtual[2]}`);
     input.setAttribute('type', 'number');
     input.setAttribute('min', '0');
-    input.setAttribute('max', '10000');    
+    input.setAttribute('max', '10000');
     input.addEventListener('input', updateValue);
 
     const valorTotalH3 = document.createElement('h3');
     valorTotalH3.innerHTML = 'Valor Total:';
 
     const valorMonetario = document.createElement('h2');
-    valorMonetario.classList.add('valor-monetario'); 
+    valorMonetario.classList.add('valor-monetario');
     valorMonetario.innerHTML = 'R$ 0,00';
 
     moneyColumn.appendChild(moneyValueH2);
@@ -53,15 +53,15 @@ values.forEach(valorAtual => {
     moneyColumn.appendChild(valorMonetario);
 
     flexContainer.appendChild(moneyColumn);
-      
+
     function updateValue(e) {
 
         let value = e.target.value
-        let total = (value * valorAtual[0]).toFixed(2);     
+        let total = (value * valorAtual[0]).toFixed(2);
 
         valorAtual[3] = parseFloat(total);
         calculate();
-        
+
         valorMonetario.textContent = 'R$' + total.replace('.', ',');
 
     }
@@ -74,5 +74,5 @@ values.forEach(valorAtual => {
         console.log(totalValueNumber);
         totalValue.innerHTML = 'R$ ' + totalValueNumber.toFixed(2).replace('.', ',');
     }
-    
+
 });
