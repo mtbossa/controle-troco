@@ -8,7 +8,7 @@
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: linear-gradient(rgb(68, 68, 68), rgb(37, 37, 37));
+    background-image: linear-gradient(rgb(26, 26, 75), rgb(21, 17, 85));
 }
 
 #total-display {
@@ -20,7 +20,7 @@ body {
     border-bottom-right-radius: 50px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.308);
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
     padding: 10px;
 }
 
@@ -42,15 +42,19 @@ body {
     margin: 0.8rem;
     padding: 0rem;
     width: 10%;
-    box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.308);
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
 }
 
-.money-column hr {    
+.money-column span {
+    display: block;
+    height: 3px;
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 9px;
+    margin: 0 20px;
+    margin-bottom: 0.5rem;
     margin-right: auto;
     margin-left: auto;
-    width: 60%;
-    border: 1px solid;
-    margin-bottom: 0.5rem;
 }
 
 .money-column h4 {
@@ -68,7 +72,7 @@ body {
 }
 
 .money-column input {
-    background-color: rgb(170, 231, 255);
+    background-color: rgb(255, 255, 255);
     font-size: 1.2em;
     width: 50%;
     border: none;
@@ -79,6 +83,7 @@ body {
     padding: 5px 0px;
     margin-bottom: 0rem;
     color: black;
+    box-shadow: inset 0px 0px 5px -1px #000000;;
 }
 
 /* Chrome, Safari, Edge, Opera */
