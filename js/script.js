@@ -1,39 +1,28 @@
-const values = [
-    [0.05, '0,05', 'cincoCentavos', 0.0],
-    [0.10, '0,10', 'dezCentavos', 0.0],
-    [0.25, '0,25', 'vinceCincoCentavos', 0.0],
-    [0.50, '0,50', 'cinquentaCentavos', 0.0],
-    [1.00, '1,00', 'umReal', 0.0],
-    [2.00, '2,00', 'doisReais', 0.0],
-    [5.00, '5,00', 'cincoReais', 0.0],
-    [10.00, '10,00', 'dezReais', 0.0],
-    [20.00, '20,00', 'vinteReais', 0.0],
-    [50.00, '50,00', 'cinquentaReais', 0.0],
-    [100.00, '100,00', 'cemReais', 0.0],
-    [200.00, '200,00', 'duzentosReais', 0.0]
-];
-
-const flexContainer = document.querySelector('#flex-container');
-
+const flexContainerCoins = document.querySelector('#coins');
+const flexContainerCash = document.querySelector('#cash');
 const totalValue = document.querySelector('#valor-total');
 
 let totalValueNumber = 0.00;
 
-values.forEach(valorAtual => {
+coins.forEach(createMoneyColumns);
+
+cash.forEach(createMoneyColumns);
+
+function createMoneyColumns(currentValue) {
 
     const moneyColumn = document.createElement('div');
     moneyColumn.classList.add('money-column');
 
     const moneyValueH2 = document.createElement('h2');
-    moneyValueH2.innerHTML = `R$ ${valorAtual[1]}`;
+    moneyValueH2.innerHTML = `R$ ${currentValue.numberString}`;
 
     const label = document.createElement('label');
-    label.setAttribute('for', `${valorAtual[2]}`);
+    label.setAttribute('for', `${currentValue.numberName}`);
     label.innerHTML = '<h4>Quantidade</h4>'
 
     const input = document.createElement('input');
-    input.setAttribute('name', `${valorAtual[2]}`);
-    input.setAttribute('id', `${valorAtual[2]}`);
+    input.setAttribute('name', `${currentValue.numberName}`);
+    input.setAttribute('id', `${currentValue.numberName}`);
     input.setAttribute('type', 'number');
     input.setAttribute('min', '0');
     input.setAttribute('max', '10000');
@@ -55,27 +44,33 @@ values.forEach(valorAtual => {
     moneyColumn.appendChild(valorTotalH3);
     moneyColumn.appendChild(valorMonetario);
 
-    flexContainer.appendChild(moneyColumn);
+    if (currentValue.number < 2) {
+        flexContainerCoins.appendChild(moneyColumn);
+    } else {
+        flexContainerCash.appendChild(moneyColumn);
+    }
 
     function updateValue(e) {
 
         let value = e.target.value
-        let total = (value * valorAtual[0]).toFixed(2);
+        let total = (value * currentValue.number).toFixed(2);
 
-        valorAtual[3] = parseFloat(total);
+        currentValue.totalSum = parseFloat(total);
+
         calculate();
 
         valorMonetario.textContent = 'R$' + total.replace('.', ',');
-
     }
 
-    function calculate() {
-        totalValueNumber = 0.0;
-        values.forEach(element => {
-            totalValueNumber += element[3]
-        });
-        console.log(totalValueNumber);
-        totalValue.innerHTML = 'R$ ' + totalValueNumber.toFixed(2).replace('.', ',');
-    }
+}
 
-});
+function calculate() {
+    totalValueNumber = 0.0;
+    coins.forEach(currentValue => {
+        totalValueNumber += currentValue.totalSum
+    });
+    cash.forEach(currentValue => {
+        totalValueNumber += currentValue.totalSum
+    });
+    totalValue.innerHTML = 'R$ ' + totalValueNumber.toFixed(2).replace('.', ',');
+}

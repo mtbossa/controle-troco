@@ -12,32 +12,29 @@
 
     <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-    <title>Conta Caixa</title>
+    <script src="js/values.js?v=1.0"></script>
+
+    <title>Fechamento de Caixa</title>
 </head>
 
 <body>
-
     <div id="total-display">
         <h2>
             Valor total: <h1 id="valor-total">R$ 0,00</h1>
         </h2>
     </div>
 
+    <h2 class="type-title">
+        Moedas
+    </h2>
+    <div class="flex-container" id="coins"></div>
 
-    <div id="flex-container">
-
-        <!-- Money Columns -->
-        <!-- <div class="money-column">
-            <h2>R$ 0,05</h2>
-            <label for="cincoCentavos"><h4>Quantidade</h4></label>
-                <input name="cincoCentavos" id="cincoCentavos" type="number" min="0" max="10000">
-                <h3>Valor total:</h3>
-                <h2 class="valor-monetario">R$ 5,55</h2>
-        </div> -->
-
-    </div>
-
-    <script src="script.js?v=1.0"></script>
+    <h2 class="type-title">
+        Notas
+    </h2>
+    <div class="flex-container" id="cash"></div>
+    
+    <script src="js/script.js?v=1.1"></script>   
 
 </body>
 
