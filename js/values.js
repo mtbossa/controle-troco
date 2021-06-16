@@ -1,77 +1,65 @@
 const coins = [
     {
-        number: 0.05,
-        numberString: '0,05',
-        numberName: 'cincoCentavos',
+        value: 0.05,
+        valueName: 'cincoCentavos',
         totalSum: 0.0
     },
     {
-        number: 0.10,
-        numberString: '0,10',
-        numberName: 'dezCentavos',
+        value: 0.10,
+        valueName: 'dezCentavos',
         totalSum: 0.0
     },
     {
-        number: 0.25,
-        numberString: '0,25',
-        numberName: 'vinteCincoCentavos',
+        value: 0.25,
+        valueName: 'vinteCincoCentavos',
         totalSum: 0.0
     },
     {
-        number: 0.50,
-        numberString: '0,50',
-        numberName: 'cinquentaCentavos',
+        value: 0.50,
+        valueName: 'cinquentaCentavos',
         totalSum: 0.0
     },
     {
-        number: 1.00,
-        numberString: '1,00',
-        numberName: 'umReal',
+        value: 1.00,
+        valueName: 'umReal',
         totalSum: 0.0
     },
 ];
 
 const cash = [
     {
-        number: 2.00,
-        numberString: '2,00',
-        numberName: 'doisReais',
+        value: 2.00,
+        valueName: 'doisReais',
         totalSum: 0.0
     },
     {
-        number: 5.00,
-        numberString: '5,00',
-        numberName: 'cincoReais',
+        value: 5.00,
+        valueName: 'cincoReais',
         totalSum: 0.0
     },
     {
-        number: 10.00,
-        numberString: '10,00',
-        numberName: 'dezReais',
+        value: 10.00,
+        valueName: 'dezReais',
         totalSum: 0.0
     },
     {
-        number: 20.00,
-        numberString: '20,00',
-        numberName: 'vinteReais',
+        value: 20.00,
+        valueName: 'vinteReais',
         totalSum: 0.0
     },
     {
-        number: 50.00,
-        numberString: '50,00',
-        numberName: 'cinquentaReais',
+        value: 50.00,
+        valueName: 'cinquentaReais',
         totalSum: 0.0
     },
     {
-        number: 100.00,
-        numberString: '100,00',
-        numberName: 'cemReais',
+        value: 100.00,
+        valueName: 'cemReais',
         totalSum: 0.0
     },
     {
-        number: 200.00,
-        numberString: '200,00',
-        numberName: 'duzentosReais',
+        value: 200.00,
+        valueName: 'duzentosReais',
         totalSum: 0.0
     },
 ];
