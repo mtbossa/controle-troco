@@ -1,3 +1,9 @@
+/**
+ * Stores all coins currently being used in Brazil
+ * value: the number value
+ * valueName: used to create the HTML input id
+ * totalSum: will hold the sum after input
+ */
 const coins = [
     {
         value: 0.05,
@@ -26,6 +32,12 @@ const coins = [
     },
 ];
 
+/**
+ * Stores all cash currently being used in Brazil
+ * value: the number value
+ * valueName: used to create the HTML input id
+ * totalSum: will hold the sum after input
+ */
 const cash = [
     {
         value: 2.00,
