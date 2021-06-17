@@ -1,6 +1,27 @@
 // Selector
 const headerTotal = document.querySelector('#total-sum');
 
+/**
+ * Changes the value to be the max if the input is greater-than it
+ * @param {number} max The max possible input that the user can enter
+ * @returns {}
+ */
+ function maxInputVerification(max) {   
+    
+    return function () {
+
+        //Se o input for maior que 15.4 ele irá fixa o valor maximo no value
+        if (parseFloat(this.value) > max) {
+            this.value = max;
+        }
+
+    };
+}
+
+// Determines the max possible input
+const maxInputValue = 2000;
+const f = maxInputVerification(maxInputValue);
+
 function createMoneyColumns(currentValue) {
     // moneyColumns
     const moneyColumn = document.createElement('div');
@@ -27,8 +48,9 @@ function createMoneyColumns(currentValue) {
     input.setAttribute('id', `${currentValue.valueName}`);
     input.setAttribute('type', 'number');
     input.setAttribute('min', '0');
-    input.setAttribute('max', '10000');
+    input.setAttribute('max', '2000');
     input.addEventListener('input', moneyColumnSum);
+    input.addEventListener('input', f);
     moneyColumn.appendChild(input);
 
     // totalValueH3 - title/text
@@ -58,15 +80,29 @@ function createMoneyColumns(currentValue) {
     /**
      * Called on every input. Calculatates the sum in the current
      * moneyColumn, displays it and then calls totalSum()
-     * @param {*} e 
+     * @param {*} e The input
      */
     function moneyColumnSum(e) {
+        const amount = e.target.value;
 
-        const value = e.target.value
-        const total = (value * currentValue.value).toFixed(2);
+        if(amount <= maxInputValue) {
+            sum(amount);
+        } else {
+            sum(maxInputValue);
+        }
+        
+    }
+    
+    /**
+     * Calculates and updates the text result in moneyColumn with the result.
+     * Calculates the totalSum() as well.
+     * @param {number} amount The amount inputted
+     */
+    function sum(amount) {
+        const total = (amount * currentValue.value).toFixed(2);
         currentValue.totalSum = parseFloat(total);
         moneyColumnSumH2.textContent = 'R$' + total.replace('.', ',');
-
+    
         //  Needs to be invoked on every input
         totalSum();
     }
