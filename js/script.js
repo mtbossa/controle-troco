@@ -1,5 +1,7 @@
 // Selector
 const headerTotal = document.querySelector('#total-sum');
+const headerTotalSumMoedas = document.querySelector('#total-sum-moedas');
+const headerTotalSumNotas = document.querySelector('#total-sum-notas');
 
 /**
  * Changes the value to be the max if the input is greater-than it
@@ -117,15 +119,21 @@ function createMoneyColumns(currentValue) {
 function totalSum() {
     // Needs to be setted to 0.0, otherwise would keep infinitely adding
     let totalSum = 0.0;
+    let totalSumMoedas = 0.0;
+    let totalSumNotas = 0.0;
 
     coins.forEach((currentValue) => {
         totalSum += currentValue.totalSum
+        totalSumMoedas += currentValue.totalSum
     });
     cash.forEach((currentValue) => {
         totalSum += currentValue.totalSum
+        totalSumNotas += currentValue.totalSum
     });
 
     headerTotal.innerHTML = 'R$ ' + totalSum.toFixed(2).replace('.', ',');
+    headerTotalSumMoedas.innerHTML = 'R$ ' + totalSumMoedas.toFixed(2).replace('.', ',');
+    headerTotalSumNotas.innerHTML = 'R$ ' + totalSumNotas.toFixed(2).replace('.', ',');
 }
 
 // Runs the createMoneyColumns for each element inside each array

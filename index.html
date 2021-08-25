@@ -18,26 +18,43 @@
 </head>
 
 <body>
-    <header>
+    <header>        
         <div id="total-display">
-            <h2>
-                Valor total: <h1 id="total-sum">R$ 0,00</h1>
-            </h2>
+            <div class="sum-title-small">
+                <h3>
+                    Total moedas: <h2 id="total-sum-moedas">R$ 0,00</h2>
+                </h3>
+            </div>  
+            <div class="sum-title">                
+                <h2>
+                    Valor total: <h1 id="total-sum">R$ 0,00</h1>
+                </h2>
+            </div>  
+            <div class="sum-title-small">
+                <h3>
+                    Total notas: <h2 id="total-sum-notas">R$ 0,00</h2>
+                </h3>
+            </div>        
         </div>
-    </header>    
-
-    <h2 class="type-title">
-        Moedas
-    </h2>
-    <div class="flex-container" id="coins"></div>
-
-    <h2 class="type-title">
-        Notas
-    </h2>
-    <div class="flex-container" id="cash"></div>
+    </header>   
     
-    <script src="js/script.js?rnd=135"></script>   
+    <main>
+        <h2 class="type-title">
+            Moedas
+        </h2>
+        <div class="flex-container" id="coins"></div>
+    
+        <h2 class="type-title">
+            Notas
+        </h2>
+        <div class="flex-container" id="cash"></div>
+        
+        <script src="js/script.js?rnd=135"></script>   
+    </main>
 
+    <footer>
+        Feito por: Mateus Ribeiro Bossa - <i></i>Github: <a href="https://github.com/mtbossa">github.com/mtbossa</a>
+    </footer>
 </body>
 
 </html>
