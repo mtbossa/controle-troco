@@ -8,7 +8,7 @@ const headerTotalSumNotas = document.querySelector('#total-sum-notas');
  * @param {number} max The max possible input that the user can enter
  * @returns {}
  */
- function maxInputVerification(max) {   
+function maxInputVerification(max) {   
     
     return function () {
 

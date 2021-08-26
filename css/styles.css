@@ -8,7 +8,7 @@
 body {
     background-repeat: no-repeat;
     background-attachment: fixed;
-   /* background-image: linear-gradient(rgb(13, 13, 51), rgb(18, 16, 46)); */
+   background-image: linear-gradient(rgb(216, 216, 216), rgb(216, 216, 216));
 }
 
 /* The navigation bar */
@@ -17,25 +17,38 @@ body {
     position: fixed; /* Set the navbar to fixed position */
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    
+    background-image: linear-gradient(rgb(37, 37, 37), rgb(27, 27, 27));
+
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 3px;
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
+}
+
+.container-links {
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+
+}
+
+.icon {
+    display: block;
 }
 
 #total-display {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
 
     margin: auto;
     margin-bottom: 0.5rem;
     padding: 10px;
-
-    background-image: linear-gradient(rgb(37, 37, 37), rgb(27, 27, 27));
-
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
 }
 
 .flex-container {    
@@ -57,7 +70,7 @@ main > .type-title {
 
     color: #000000;
 
-    margin-top: 8rem;
+    margin-top: 10rem;
 }
 
 main > .type-title ~ .type-title{
@@ -75,7 +88,7 @@ main > .type-title ~ .type-title{
     background-image: linear-gradient(rgb(72, 74, 75), rgb(71, 73, 75));
 
     border-radius: 5px;   
-    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
+    box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.600);
 }
 
 .money-column span {
@@ -148,13 +161,16 @@ input[type=number] {
     color: #15ff00b0;
 }
 
-.money-column-sum,
-#total-display h1 {
-    text-shadow: 0px 0px 5px rgb(105, 105, 105);
-}
-
 footer {
     margin: 5px;
 
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer a{
+    margin: 5px;
+
+    color: #000000;
     font-family: 'Roboto', sans-serif;
 }
