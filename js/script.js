@@ -2,6 +2,7 @@
 const headerTotal = document.querySelector('#total-sum');
 const headerTotalSumMoedas = document.querySelector('#total-sum-moedas');
 const headerTotalSumNotas = document.querySelector('#total-sum-notas');
+const refreshIcon = document.querySelector('#refresh-icon');
 
 /**
  * Changes the value to be the max if the input is greater-than it
@@ -47,6 +48,7 @@ function createMoneyColumns(currentValue) {
     // Input
     const input = document.createElement('input');
     input.setAttribute('name', `${currentValue.valueName}`);
+    input.setAttribute('class', 'input');
     input.setAttribute('id', `${currentValue.valueName}`);
     input.setAttribute('type', 'number');
     input.setAttribute('min', '0');
@@ -109,7 +111,35 @@ function createMoneyColumns(currentValue) {
         totalSum();
     }
 
+    // Selects all the input fields and the total value from each column
+    // so we can add the event listener to the icon 'Limpar'
+    const inputs = document.querySelectorAll('.input')
+    const totalValuesColumns = document.querySelectorAll('.money-column-sum');
+
+    // Sets the sum values to 0 after clicking
+    refreshIcon.addEventListener('click', () => {
+        inputs.forEach(input => {
+            input.value = '';            
+        });
+
+        totalValuesColumns.forEach(totalValueColumn => {
+            totalValueColumn.innerText = 'R$ 0,00';        
+        });
+
+        cash.forEach(currentValue => {
+            currentValue.totalSum = 0;
+        });
+
+        coins.forEach(currentValue => {
+            currentValue.totalSum = 0;
+        });
+
+        headerTotal.innerHTML = 'R$ 0,00';
+        headerTotalSumMoedas.innerHTML = 'R$ 0,00'
+        headerTotalSumNotas.innerHTML = 'R$ 0,00'
+    });
 }
+
 
 /**
  * Every time a value is inputted, this will be called,
