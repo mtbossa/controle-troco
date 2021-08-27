@@ -29,6 +29,8 @@ function createMoneyColumns(currentValue) {
     // moneyColumns
     const moneyColumn = document.createElement('div');
     moneyColumn.classList.add('money-column');
+    moneyColumn.classList.add(currentValue.valueName)
+    moneyColumn.style.backgroundImage = `linear-gradient(${currentValue.color[0]}, ${currentValue.color[1]})`;
 
     // moneyValueH2 - title - identifies the column with the value
     const moneyValueH2 = document.createElement('h2');
@@ -74,9 +76,11 @@ function createMoneyColumns(currentValue) {
      * it will be appended to the #coins container.
      */
     if (currentValue.value < 2) {
+        moneyColumn.classList.add('money-column-coin');
         const flexContainer = document.querySelector('#coins');
         flexContainer.appendChild(moneyColumn);
     } else {
+        moneyColumn.classList.add('money-column-cash');
         const flexContainer = document.querySelector('#cash');
         flexContainer.appendChild(moneyColumn);
     }
