@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
     box-sizing: border-box;
 }
 
@@ -126,6 +127,7 @@ main > .type-title ~ .type-title{
 
 .money-column h2 {
     font-size: 25px;
+    font-weight: 900;
 
     margin: 0.5rem;
 }
@@ -234,3 +236,51 @@ footer span {
 .link {
     cursor: pointer;
 }
+
+.input-container {
+    display: flex;
+    
+    justify-content: center;
+}
+
+.icon-change {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin: 0px 5px;
+
+    font-size: 50px;
+
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px -1px #000000;
+    background-color: rgb(255, 255, 255);
+
+    cursor: pointer;
+
+    user-select: none; /* standard syntax */
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+
+.decrement {
+    color: red;
+
+    padding-bottom: 6.5px;
+}
+
+.increment {
+    color: green;
+
+    padding-bottom: 0.5px;
+}
+
+
+
+
+

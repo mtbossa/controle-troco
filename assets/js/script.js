@@ -47,6 +47,13 @@ function createMoneyColumns(currentValue) {
     label.innerHTML = '<h4>Quantidade</h4>'
     moneyColumn.appendChild(label);
 
+    // Decrement icon
+    const decrement = document.createElement('div');
+    decrement.classList.add('icon-change');
+    decrement.classList.add('decrement');
+    decrement.innerHTML = '-';
+    decrement.addEventListener('click', changeQuantity);
+
     // Input
     const input = document.createElement('input');
     input.setAttribute('name', `${currentValue.valueName}`);
@@ -57,7 +64,21 @@ function createMoneyColumns(currentValue) {
     input.setAttribute('max', '2000');
     input.addEventListener('input', moneyColumnSum);
     input.addEventListener('input', f);
-    moneyColumn.appendChild(input);
+
+    // Increment icon
+    const increment = document.createElement('div');
+    increment.classList.add('icon-change');
+    increment.classList.add('increment');
+    increment.innerHTML = '+';
+    increment.addEventListener('click', changeQuantity);
+
+    // Input div
+    const div_input = document.createElement('div');
+    div_input.classList.add('input-container');
+    div_input.appendChild(decrement);
+    div_input.appendChild(input);
+    div_input.appendChild(increment);
+    moneyColumn.appendChild(div_input);
 
     // totalValueH3 - title/text
     const totalValueH3 = document.createElement('h3');
@@ -106,13 +127,34 @@ function createMoneyColumns(currentValue) {
      * Calculates the totalSum() as well.
      * @param {number} amount The amount inputted
      */
-    function sum(amount) {
+    function sum(amount)
+    {
         const total = (amount * currentValue.value).toFixed(2);
         currentValue.totalSum = parseFloat(total);
         moneyColumnSumH2.textContent = 'R$' + total.replace('.', ',');
     
         //  Needs to be invoked on every input
         totalSum();
+    }
+
+    function changeQuantity(e)
+    {       
+        const item = e.target;
+
+        if(item.classList[1] == 'decrement') {
+            const current_input = item.nextSibling;
+
+            if(current_input.value > 0) {
+                current_input.value--;
+                current_input.dispatchEvent(new Event('input'));
+            }
+            
+        } else {
+            const current_input = item.previousSibling;
+        
+            current_input.value++;
+            current_input.dispatchEvent(new Event('input'));                 
+        }
     }
 
     // Selects all the input fields and the total value from each column
@@ -131,11 +173,11 @@ function createMoneyColumns(currentValue) {
         });
 
         cash.forEach(currentValue => {
-            currentValue.totalSum = 0;
+            currentValue.totalSum = 0;            
         });
 
         coins.forEach(currentValue => {
-            currentValue.totalSum = 0;
+            currentValue.totalSum = 0;          
         });
 
         headerTotal.innerHTML = 'R$ 0,00';
