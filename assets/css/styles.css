@@ -179,12 +179,13 @@ input[type=number] {
 
     color: #000000;
 
-    justify-content: justify;
-    
+    justify-content: justify;    
 }
 
 .container-about h1 {
     font-size: 2em;
+
+    margin-top: 15px;
 }
 
 .container-about p {
