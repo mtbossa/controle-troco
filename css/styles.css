@@ -218,6 +218,10 @@ input[type=number] {
     font-size: 1.2em;
 }
 
+.project-news {
+    margin-left: 50px;
+}
+
 footer {
     margin: 30px 0px 10px;
     text-align: center;
