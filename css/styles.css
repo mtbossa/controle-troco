@@ -92,7 +92,7 @@ a {
     
 
     margin: auto;   
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
 }
 
 main > .type-title {
@@ -100,7 +100,7 @@ main > .type-title {
 
     color: #000000;
 
-    margin-top: 9rem;
+    margin-top: 10rem;
 }
 
 main > .type-title ~ .type-title{
@@ -194,7 +194,7 @@ input[type=number] {
     color: #4cd440;
 }
 
-.container-about {
+.container-content {
     margin: 80px 20px 50px 20px;
 
     color: #000000;
@@ -202,14 +202,20 @@ input[type=number] {
     justify-content: justify;    
 }
 
-.container-about h1 {
-    font-size: 2em;
-
+.page-title {
     margin-top: 15px;
+    margin-bottom: 15px;
+
+    text-align: center;  
+
+    font-size: 2em;      
 }
 
-.container-about p {
+.container-content p {
     margin-left: 10px;
+    margin-bottom: 20px;
+    
+    font-size: 1.2em;
 }
 
 footer {
@@ -321,7 +327,94 @@ footer span {
     padding-bottom: 0.5px;
 }
 
+.social-links-wrapper {
+  display: flex;
 
+  height: 100%;
+  width: 100%;
 
+  align-items: center;
+  justify-content: center;  
+}
 
+.social-links-wrapper a {
+    color: inherit;
+}
 
+.social-links-wrapper .button-social {
+    display: inline-block;
+
+    height: 60px;
+    width: 60px;
+
+    margin: 0 5px;
+    overflow: hidden;
+
+    background: rgb(236, 236, 236);
+    border-radius: 50px;
+    
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+}
+
+.social-links-wrapper .button-social:hover{
+    width: 200px;
+}
+
+.social-links-wrapper .button-social .icon-social{
+    display: inline-block;
+
+    height: 60px;
+    width: 60px;
+
+    text-align: center;
+    
+    border-radius: 50px;
+    box-sizing: border-box;
+
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.social-links-wrapper .button-social.facebook:hover .icon-social{
+    background: #4267B2;
+}
+
+.social-links-wrapper .button-social.instagram:hover .icon-social{
+    background: #E1306C;
+}
+
+.social-links-wrapper .button-social.email:hover .icon-social{
+    background: #b61820;
+}
+
+.social-links-wrapper .button-social .icon-social i{
+    font-size: 25px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.social-links-wrapper .button-social:hover .icon-social i{
+    color: #fff;
+}
+
+.social-links-wrapper .button-social span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.social-links-wrapper .button-social.facebook span{
+    color: #4267B2;
+}
+
+.social-links-wrapper .button-social.instagram span{
+    color: #E1306C;
+}
+
+.social-links-wrapper .button-social.email span{
+    color: #b61820;
+}

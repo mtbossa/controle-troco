@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Conta Notas | Sobre</title>   
+    <meta name="description" content="Sobre o site.">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Source+Sans+Pro:wght@400;900&display=swap"
         rel="stylesheet">
@@ -14,15 +17,28 @@
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1583793484936118"
      crossorigin="anonymous"></script>
-    <script src="js/values.js?rnd=124" defer></script>
-    <script src="js/script.js?rnd=124" defer></script>   
 
-    <title>Conta Notas  | Calcule suas notas e moedas e feche seu caixa de maneira eficiente!</title>
-    <meta name="description" content="Easily convert text between different letter cases: lower case, UPPER CASE, Sentence case, Capitalized Case, aLtErNaTiNg cAsE and more online.">
-    <meta name="description" content="Calcule o total de notas e moedas que você tem de maneira simples e eficiente. Saiba o valor total de cada nota e moeda, o total de todas as notas e moedas e a soma total.">
+    <meta property="og:url"           content="http://www.contanotas.com/index.html" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Conta Notas" />
+    <meta property="og:description"   content="Calcule o valor de suas notas e feche seu caixa com facilidade!" />
+    <meta property="og:image"         content="http://www.contanotas.com/assets/images/logo.png" />
+
 </head>
 
 <body>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+         (function(d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <header>
         <nav class="navbar">
 
@@ -32,7 +48,13 @@
                     <a href="/about.html" class="navbar-link"><li>SOBRE</li></a>
                     <a href="/contact.html" class="navbar-link"><li>CONTATO</li></a>
                     <a href="/tips.html" class="navbar-link"><li>DICAS</li></a>
-                    <a href="/share.html" class="navbar-link"><li>COMPARTILHE!</li></a>
+                    <!-- Your share button code -->
+                    <li>
+                        <div class="fb-share-button" 
+                        data-href="http://www.contanotas.com/index.html" 
+                        data-layout="button_count">
+                        </div>
+                    </li>
                 </ul>                
             </div>
 
@@ -41,18 +63,12 @@
     </header>   
     
     <main>   
-        <div class="container-about">
-            <h1>Sobre o site</h1>
+        <div class="container-content">
+            <h1 class="page-title">Sobre o site</h1>
                 <p>
                     Esse site foi criado a partir do conhecimento da dificuldade das pessoas que operam caixas em fazer o seu fechamento. Contar todas as notas e moedas e ainda ter que multiplicar seu valor é um trabalho tedioso e que muitas vezes leva ao fechamento com valores errados.<br>
                     O site diponibiliza os resultados da soma para cada nota/moeda, presente dentro de cada <i>card</i>, de todas as notas e moedas e a soma entre todas as noteas e moedas juntas, representando o valor total do caixa.
-                </p>
-            <h1>Dicas para fechar o caixa</h1>
-                <p>
-                    Comece um pouco antes de terminar o turno.<br>
-                    Anote quais notas/moedas você já contou, para caso tenha que dar troco após sua contagem e assim não precisar contar novamente<br>
-                    Quando for retirar o dinheiro, retire também do site para saber quanto valor ainda está no caixa.
-                </p>
+                </p>            
         </div>
     </main>
 
