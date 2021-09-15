@@ -447,6 +447,11 @@ main .divisor {
     box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.308);
 }
 
+.img-moeda {
+    width: 160px;
+    height: 160px;
+}
+
 .container-cedulas {
     display: flex;
 
@@ -467,11 +472,22 @@ main .divisor {
     width: 300px;
 }
 
+.container-valor-moeda {
+    margin: 20px 40px;
+
+    vertical-align: top;
+
+    display: inline-block;
+
+    text-align: center;
+
+    width: 160px;
+}
+
 .card {
     width: 100%;
     position: relative;
-    display: inline-block;
-    
+    display: inline-block;    
 }
 
 .card .img-top {
