@@ -27,7 +27,7 @@ a {
     
     background-image: linear-gradient(rgb(37, 37, 37), rgb(27, 27, 27));
 
-    z-index: 100;
+    z-index: 101;
 
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
@@ -270,8 +270,6 @@ main .divisor {
     background-color: #000000;
 }
 
-
-
 .footer-links {
     margin-top: 10px;
 
@@ -289,6 +287,8 @@ main .divisor {
     position: fixed;
     bottom: 20px;
     right: 20px; 
+
+    z-index: 100;
 
     padding: 5px 10px;
 
@@ -439,7 +439,7 @@ main .divisor {
     color: #b61820;
 }
 
-/* Cédulas */
+/* Cédulas e Moedas */
 .img-cedula {
     width: 320px;
     height: 160px;
@@ -450,6 +450,9 @@ main .divisor {
 .img-moeda {
     width: 160px;
     height: 160px;
+
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.308);
 }
 
 .container-cedulas {
@@ -499,5 +502,9 @@ main .divisor {
 }
 .card:hover .img-top {
     display: inline;
+}
+
+.caption {
+    font-weight: bold;
 }
 
